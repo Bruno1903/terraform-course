@@ -11,6 +11,7 @@ terraform {
 
 provider "aws" {
   region = "sa-east-1"
+
   default_tags {
     tags = {
       owner      = "brunoalmeida"
@@ -18,4 +19,3 @@ provider "aws" {
     }
   }
 }
-
