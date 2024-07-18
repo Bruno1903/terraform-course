@@ -40,3 +40,29 @@ resource "aws_route_table_association" "rta" {
   subnet_id      = aws_subnet.subnet.id
   route_table_id = aws_route_table.route_table.id
 }
+
+
+resource "aws_security_group" "security_group" {
+    name        = "security_group_terraform"
+  description = "Permitir acesso na porta 22"
+  vpc_id      = aws_vpc.vpc.id
+
+  ingress {
+    description = "SSH"
+    protocol  = "tcp"
+    from_port = 22
+    to_port   = 22
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "security_group-terraform" 
+  }
+}
