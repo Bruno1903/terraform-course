@@ -16,10 +16,10 @@ resource "aws_instance" "vm" {
   }
 
   connection {
-    type     = "ssh"
-    user     = "ubuntu"
+    type        = "ssh"
+    user        = "ubuntu"
     private_key = file("./aws-key")
-    host     = self.public_ip
+    host        = self.public_ip
   }
 
   provisioner "remote-exec" {
