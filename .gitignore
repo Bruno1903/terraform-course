@@ -19,6 +19,7 @@ crash.*.log
 #keys
 aws-key.txt
 aws-key.pub
+aws-key
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
